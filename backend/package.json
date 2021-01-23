@@ -1,0 +1,22 @@
+{
+  "name": "danceify-backend",
+  "version": "0.0.1",
+  "description": "Backend for danceify wich concatenates videos",
+  "main": "src/app.js",
+  "scripts": {
+    "dev": "nodemon"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cuid": "^2.1.8",
+    "express": "^4.17.1",
+    "ffmpeg-static": "^4.2.7",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.11",
+    "@types/node": "^12.19.15",
+    "nodemon": "^2.0.7"
+  }
+}
