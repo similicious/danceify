@@ -75,5 +75,5 @@ app.post('/dance/:name', async (req, res) => {
     })
 
 })
-
-app.listen(8080, () => console.log('Backend listening on port 8080'))
+const port = process.env.PORT || 8080;
+app.listen(port, () => console.log(`Backend listening on port ${port}`))
