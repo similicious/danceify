@@ -37,7 +37,7 @@ app.get('/api/dance/:name', async (req, res) => {
     const name = req.params['name'];
      
     // Validate user input against regex
-    if(!name.match(nameExp)) {
+    if(!name.match(nameExp) && name.length > 10) {
         res.sendStatus(400);
         return;
     }
