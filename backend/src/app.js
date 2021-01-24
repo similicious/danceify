@@ -17,6 +17,12 @@ const cuid = require('cuid')
 const express = require('express');
 const morgan = require('morgan')
 
+// Setup temp folder
+const tmpDir = join(__dirname, '..', 'tmp');
+if (!fs.existsSync(tmpDir)) {
+    fs.mkdirSync(tmpDir)
+}
+
 // App
 const app = express();
 
@@ -48,7 +54,7 @@ app.get('/api/dance/:name', async (req, res) => {
     const videoListPath = join(__dirname, '..', 'tmp', `${videoId}.txt`)
 
     // Write video list into tmp folder
-    writeFile(videoListPath, videoList, { encoding: 'utf-8' });
+    await writeFile(videoListPath, videoList, { encoding: 'utf-8' });
 
     // Assemble command
     const command = `${ffmpegPath} -safe 0 -f concat -i ${videoListPath} -c copy ${videoPath}`
@@ -57,6 +63,7 @@ app.get('/api/dance/:name', async (req, res) => {
     exec(command, async (err, std, stderr) => {
 
         if(err) {
+            console.log(err, stderr)
             res.sendStatus(500);
             return;
         }
