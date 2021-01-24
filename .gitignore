@@ -2,3 +2,5 @@ backend/assets/videos
 backend/assets/videos_10s
 backend/node_modules
 backend/tmp
+frontend/dist
+backend/public

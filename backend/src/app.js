@@ -24,6 +24,7 @@ const app = express();
 const nameExp = /^[a-zA-Z]+$/;
 
 app.use(morgan('dev'));
+app.use(express.static('public'))
 
 app.get('/api/dance/:name', async (req, res) => {
     
@@ -73,5 +74,6 @@ app.get('/api/dance/:name', async (req, res) => {
     })
 
 })
+
 const port = process.env.PORT || 8080;
 app.listen(port, () => console.log(`Backend listening on port ${port}`))
