@@ -1,0 +1,8 @@
+{
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}",
+        ".vscode{,/**}",
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/1f5b10a9-9b78-43f4-992f-294b3e195972/resourceGroups/danceify-group/providers/Microsoft.Web/sites/danceify",
+    "appService.deploySubpath": "backend"
+}
