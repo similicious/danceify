@@ -3,8 +3,13 @@
   <h1 class="text-2xl text-center my-2">Danceify</h1>
 
   <form [formGroup]="danceForm" (ngSubmit)="getDanceVideo()">
-    <input class="block w-full border rounded border-blue-500" type="text" formControlName="name">
-    <button class="mt-2 block mx-auto p-2 w-9/12 text-xl rounded text-white bg-blue-500" type="submit" [disabled]="!danceForm.valid">Tanz!</button>
+    <input class="block w-full border rounded border-blue-500" placeholder="Gib hier einen Namen ein!" type="text" formControlName="name">
+    <button
+      class="mt-2 block mx-auto p-2 w-9/12 text-xl rounded text-white bg-blue-500 disabled:opacity-50"
+      type="submit"
+      [disabled]="!danceForm.valid"
+
+      >Tanz!</button>
   </form>
 
   <video *ngIf="name" class="rounded mt-4" controls autoplay [src]="'/api/dance/' + name"></video>
