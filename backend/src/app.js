@@ -25,7 +25,7 @@ const nameExp = /^[a-zA-Z]+$/;
 
 app.use(morgan('dev'));
 
-app.post('/dance/:name', async (req, res) => {
+app.get('/api/dance/:name', async (req, res) => {
     
     const name = req.params['name'];
      
@@ -59,9 +59,7 @@ app.post('/dance/:name', async (req, res) => {
             res.sendStatus(500);
             return;
         }
-        
-        // Set file name
-        res.attachment(`${name}.m4v`)
+    
 
         // Send file
         res.sendFile(videoPath, async (err) => {
