@@ -4,10 +4,12 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { PlaybackRateDirective } from './directives/playback-rate.directive';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PlaybackRateDirective
   ],
   imports: [
     BrowserModule,

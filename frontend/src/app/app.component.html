@@ -12,7 +12,14 @@
       >Tanz!</button>
   </form>
 
-  <video *ngIf="name" class="rounded mt-4" controls autoplay [src]="'/api/dance/' + name"></video>
+  <video
+    *ngIf="name"
+    class="rounded mt-4"
+    controls
+    autoplay
+    [src]="'/api/dance/' + name"
+    [playbackRate]="2">
+  </video>
 
 </article>
 
